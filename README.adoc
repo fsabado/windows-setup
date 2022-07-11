@@ -1,0 +1,34 @@
+= windows-setup
+
+.Get Computer Information
+[source, powershell, linenums]
+----
+# Get computer info
+Get-ComputerInfo  -Property WindowsEditionID,OSVersion,OSArchitecture
+----
+
+== Windows Subsystem for Linux (WSL)
+
+
+[source, powershell, linenums]
+.Install WSL
+----
+Enable-WindowsOptionalFeature -online -FeatureName Microsoft-Windows-Subsystem-Linux
+----
+
+== Chocolatey
+
+Windows setup scripts
+
+.Installation
+[source, powershell, linenums]
+----
+# Install on an administration Powershell
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+----
+
+= Sources
+
+* https://chocolatey.org/install
