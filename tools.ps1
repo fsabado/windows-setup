@@ -1,14 +1,10 @@
-
-Disable-UAC
-
 function executeScript {
     Param ([string]$script)
     write-host "executing $helperUri/$script ..."
     iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
 }
 
-Enable-WindowsOptionalFeature -Online -FeatureName containers -All
-Update-SessionEnvironment #refreshing env due to Git install
+Install-WindowsUpdate
 RefreshEnv
 
 choco install -y git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal'"
@@ -22,6 +18,10 @@ choco install -y python3
 choco install -y 7zip.install
 choco install -y sysinternals
 choco install -y wsl
+choco install -y notepadplusplus
+choco install -y slack
+choco install -y filezilla
+
 
 # Update pip
 RefreshEnv
