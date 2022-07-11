@@ -5,10 +5,12 @@
 ----
 # Get computer info
 Get-ComputerInfo  -Property WindowsEditionID,OSVersion,OSArchitecture
+
+# Run on Powershell Administrator
+set-executionpolicy remotesigned
 ----
 
 == Windows Subsystem for Linux (WSL)
-
 
 [source, powershell, linenums]
 .Install WSL
@@ -27,8 +29,17 @@ Windows setup scripts
 
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
+# Install helper
+choco install boxstarter
+
+
+# Getting help
+help <Command> -full
+
 ----
 
-= Sources
+
+
+== Sources
 
 * https://chocolatey.org/install
