@@ -1,0 +1,19 @@
+= Windows Linux Subsystems (WSL)
+
+.filename.sh
+[source,bash, linenums]
+----
+
+# /usr/lib/wsl/lib/libcuda.so.1 is not a symbolic link
+# Source: https://github.com/microsoft/WSL/issues/5548
+# On Powershell administrator
+cd C:\Windows\System32\lxss\lib
+Remove-Item .\libcuda.so
+Remove-Item .\libcuda.so.1
+wsl -e /bin/bash
+# On bash
+ln -s libcuda.so.1.1 libcuda.so.1
+ln -s libcuda.so.1.1 libcuda.so
+
+----
+
