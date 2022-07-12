@@ -21,6 +21,7 @@ choco install -y wsl
 choco install -y notepadplusplus
 choco install -y slack
 choco install -y filezilla
+choco install -y windowgrid
 
 
 # Update pip
