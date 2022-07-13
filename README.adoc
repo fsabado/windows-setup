@@ -38,6 +38,17 @@ help <Command> -full
 
 ----
 
+== Useful Commands
+
+[source,bash]
+.Useful Commands
+----
+# Powershell
+# Shows command path
+Get-Command <command>
+----
+
+
 
 
 == Sources
