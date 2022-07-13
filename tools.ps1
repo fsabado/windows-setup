@@ -7,6 +7,10 @@ function executeScript {
 Install-WindowsUpdate
 RefreshEnv
 
+# If you run into a issues, run with
+# --confirm (-f)
+# --debug (-d)
+# --force (-f)
 choco install -y git --package-parameters="'/GitAndUnixToolsOnPath /WindowsTerminal'"
 choco install -y vcredist2015
 choco install -y googlechrome
@@ -22,6 +26,7 @@ choco install -y notepadplusplus
 choco install -y slack
 choco install -y filezilla
 choco install -y windowgrid
+choco install -y meld
 
 
 # Update pip
